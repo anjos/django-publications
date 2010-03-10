@@ -6,3 +6,4 @@ build/
 db.sql3
 *.swp
 scripts/bootstrap.py
+test/publications
