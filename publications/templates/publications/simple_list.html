@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load markup %}
+{% block media %}
+  {{ block.super }}
+  <!-- Feeds go here if the caller has provided so -->
+  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{% trans "Publication List (simple)" %}{% endblock %}
+
+{% block content %}
+<div class="publication">
+  <p class="title">{% blocktrans %}Publications (in reverse chronological order){% endblocktrans %}</p>
+  {% if objects_by_year %}
+      {% for year,object_list in objects_by_year %}
+        <p class="year">{{ year }}</p>
+        <ul>
+        {% for p in object_list %}
+        <li><span class="author_list">{{ p.author_list }}</span>, <span class="title">"{{ p.title }}"</span>, <span class="type">{{ p.get_type_display }}</span>, {% blocktrans with p.date|date:"F/Y" as date and p.media as media %}<span class="date">{{ date }}</span>, <span class="media">{{ media }}</span>{% endblocktrans %}<span class="details">{% if p.volume %}, {% trans "volume" %} {{ p.volume }}{% endif %}{% if p.number %}, {% trans "number" %} {{ p.number }}{% endif %}{% if p.pages %}, {% trans "pages" %} {{ p.pages }}{% endif %}</span></li>
+        {% endfor %}
+        </ul>
+      {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}
+

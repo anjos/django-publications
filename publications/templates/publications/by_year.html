@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block media %}
+  {{ block.super }}
+  <!-- Feeds go here if the caller has provided so -->
+  {% for feed in feeds %}
+  <link rel="alternate" type="application/atom+xml" title="{{ feed.title }}" href="/publication/feeds/{{ feed.basename }}/"/>
+  {% endfor %}
+  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+{% block title %}{% trans "Complete list of Publications" %}{% endblock %}
+
+{% block content %}
+<div class="publication">
+  <p class="title">{% blocktrans %}Complete list of Publications{% endblocktrans %}</p>
+  <p class="intro">{% trans "This is a complete list of publications I have authored or co-authored." %} <a href="{% url publications:short-list %}">{% trans "Here" %}</a> {% trans "you can find a shorter list, with the most significative contributions." %}
+  {% if objects_by_year %}
+      {% for year,object_list in objects_by_year %}
+        <p class="subtitle">{{ year }}</p>
+        <table>
+          {% for p in object_list %}
+          <tr class="{% cycle 'even' 'odd' %}">
+            <td class="date">{{ p.date|date:"F" }}</td> 
+            <td class="type">{{ p.get_publication_type_display }}</td>
+            <td class="title"><a href="{% url publications:detail p.id %}" title="{% trans "view details" %}">{{ p.title }}</a></td>
+            <td class="attachments">
+              {% for a in p.file_set.all %}<a class="attachment" href="{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      {% endfor %}
+  {% else %}
+  <p>{% trans "No publications are available." %}</p>
+  {% endif %}
+</div>
+{% endblock %}

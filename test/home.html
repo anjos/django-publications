@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load i18n publication_tags %}
+
+{% block media %}
+  {{ block.super }}
+  <link href="{% url media "publications/css/style.css" %}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}
+
+{% block title %}{% trans "Home Page" %}{% endblock %}
+
+{% block content %}
+<div class="publication">
+{% last_publications 5 0 %}
+</div>
+{% endblock %}

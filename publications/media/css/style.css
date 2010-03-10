@@ -1,0 +1,71 @@
+.publication p.title {
+  font-weight: bold;
+}
+
+.publication p.subtitle {
+  font-weight: bold;
+}
+
+.publication table {
+  width: 100%;
+}
+
+.publication tr.even {
+  background-color: #cef;
+}
+
+.publication tr.odd {
+  background-color: #eee;
+}
+
+.publication td {
+  padding: 3px; 
+}
+
+.publication td.date {
+  width: 10%;
+}
+
+.publication td.type {
+  width: 10%;
+}
+
+.publication td.attachments {
+  width: 10%;
+}
+
+.publication p.detail {
+  font-style: italic;
+}
+
+.publication p.authors {
+  font-weight: bold;
+}
+
+.publication .abstract {
+  text-indent: 1.3em;
+}
+
+.publication .attachments {
+  font-size: 0.9em;
+}
+
+.publication .attachments a.attachment {
+  background-color: green;
+  border-color: green;
+  color: white;
+  font-family: arial, helvetica, sans;
+  font-weight: bold;
+  border-style: outset;
+  border-width: 1px;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-decoration: none;
+}
+
+.publication .attachments a.attachment:hover {
+  background-color: #0c0;
+  border-color: #0c0;
+  border-style: inset;
+}

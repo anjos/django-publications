@@ -1,0 +1,8 @@
+*~
+*.pyc
+sw*
+build/
+*.egg-info/
+db.sql3
+*.swp
+scripts/bootstrap.py
