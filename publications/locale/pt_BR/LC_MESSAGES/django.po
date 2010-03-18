@@ -2,79 +2,79 @@
 # Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Andre Anjos <andre.dos.anjos@gmail.com>, 2007.
-# , fuzzy
 #
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: publications 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-10 15:04+0100\n"
-"PO-Revision-Date: 2007-08-19 21:39+0200\n"
-"Last-Translator: Andre Anjos <andre.dos.anjos@gmail.com>\n"
+"POT-Creation-Date: 2010-03-18 15:13+0100\n"
+"PO-Revision-Date: 2010-03-18 15:13\n"
+"Last-Translator: Admin Adminston <admin@example.com>\n"
 "Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.5.3\n"
 
 #: feeds.py:13
-#, fuzzy
 msgid "Andre Anjos latest publications"
-msgstr "Título da publicação"
+msgstr "Últimas publicações de André Anjos"
 
 #: feeds.py:14
-#, fuzzy, python-format
+#, python-format
 msgid "The last %d publications I have written"
-msgstr "As ultimas coisas que escrevi"
+msgstr "As últimas %d coisas que escrevi"
 
 #: feeds.py:31
 msgid "Andre Anjos latest files"
-msgstr ""
+msgstr "Últimos arquivos de André Anjos"
 
 #: feeds.py:32
-#, fuzzy, python-format
+#, python-format
 msgid "The last %d documents I have uploaded"
-msgstr "As ultimas coisas que escrevi"
+msgstr "Os últimos %d documentos que adicionei"
 
 #: models.py:15
 msgid "Journal"
-msgstr ""
+msgstr "Revista"
 
 #: models.py:16
 msgid "Proceedings of Conference"
-msgstr ""
+msgstr "Anais de Conferência"
 
 #: models.py:17
 msgid "Thesis"
-msgstr ""
+msgstr "Tese"
 
 #: models.py:18
 msgid "Technical Report"
-msgstr ""
+msgstr "Relatório de Projeto"
 
 #: models.py:19
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
 #: models.py:22
 msgid "National"
-msgstr ""
+msgstr "Nacional"
 
 #: models.py:23
 msgid "International"
-msgstr ""
+msgstr "Internacional"
 
 #: models.py:26
 msgid "Very important"
-msgstr ""
+msgstr "Muito importante"
 
 #: models.py:27
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: models.py:28
 msgid "Not important"
-msgstr ""
+msgstr "Pouco importante"
 
 #: models.py:31
 msgid "Title of the publication"
@@ -93,14 +93,12 @@ msgid "Type of publication"
 msgstr "Tipo de publicação"
 
 #: models.py:36
-#, fuzzy
 msgid "Type of audience"
-msgstr "Tipo de publicação"
+msgstr "Tipo de audiência"
 
 #: models.py:38
-#, fuzzy
 msgid "Publication name"
-msgstr "Publicação"
+msgstr "Nome da publicação"
 
 #: models.py:39
 msgid "Volume"
@@ -120,13 +118,15 @@ msgstr "Sumário"
 
 #: models.py:43
 msgid "Importance"
-msgstr ""
+msgstr "Importância"
 
 #: models.py:45
 msgid ""
 "Choose how important is this publication. Based on this choice, the "
 "publication may or may not be shown on special listings"
 msgstr ""
+"Escolha quão importe é esta publicação. Baseando-se nessa escolha, a "
+"publicação será ou não mostrada em listagens especiais"
 
 #: models.py:50
 msgid "Files"
@@ -141,101 +141,99 @@ msgid "publications"
 msgstr "publicações"
 
 #: models.py:70
-#, fuzzy
 msgid "Name"
-msgstr "Número"
+msgstr "Nome"
 
 #: models.py:71
 msgid "The name of the file. Can contain spaces and other special characters"
-msgstr ""
+msgstr "O nome do arquivo. Pode conter espaços e caractéres especiais"
 
 #: models.py:72
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: models.py:73
 msgid "Explain what this file is - be verbose!"
-msgstr ""
+msgstr "Explique o que é este arquivo - seja verborrágico!"
 
 #: models.py:74
-#, fuzzy
 msgid "File"
-msgstr "Arquivos"
+msgstr "Arquivo"
 
 #: models.py:75
 msgid "Specify here the file that will be uploaded."
-msgstr ""
+msgstr "Especifique aqui o arquivo que será carregado."
 
 #: models.py:76
 msgid "Upload date"
-msgstr ""
+msgstr "Data de upload"
 
 #: models.py:77
 msgid "Sets the insertion date of this file"
-msgstr ""
+msgstr "Ajusta a data de inserção deste arquivo"
 
 #: models.py:78
 msgid "Publicly visible"
-msgstr ""
+msgstr "Visível publicamente"
 
 #: models.py:79
 msgid "Sets the visibility of this file for not anonymous users."
-msgstr ""
+msgstr "Ajusta a visibilidade deste arquivo para usuários anônimos."
 
 #: models.py:80
 msgid "MD5 checksum"
-msgstr ""
+msgstr "Soma MD5"
 
 #: models.py:80
 msgid ""
 "Insert an optional MD5 checksum. If you leave it blank I'll calculate the "
 "checksum based on the file contents I stored"
 msgstr ""
+"Insira uma soma MD5 opcional. Se você deixá-la em branco, eu calcularei essa "
+"soma baseada no conteúdo do arquivo armazenado"
 
 #: models.py:118
-#, fuzzy
 msgid "file"
-msgstr "Arquivos"
+msgstr "arquivo"
 
 #: models.py:119
-#, fuzzy
 msgid "files"
-msgstr "Arquivos"
+msgstr "arquivo"
 
 #: models.py:133
 msgid "Size (bytes)"
-msgstr ""
+msgstr "Tamanho (bytes)"
 
 #: templates/publications/by_year.html:11
 #: templates/publications/by_year.html:15
-#, fuzzy
 msgid "Complete list of Publications"
-msgstr "Tipo de publicação"
+msgstr "Lista de publicações completa"
 
 #: templates/publications/by_year.html:16
 msgid "This is a complete list of publications I have authored or co-authored."
-msgstr ""
+msgstr "Esta é uma lista completa de publicações que escrevi ou participei."
 
 #: templates/publications/by_year.html:16
 #: templates/publications/short_list.html:16
 msgid "Here"
-msgstr ""
+msgstr "Aqui"
 
 #: templates/publications/by_year.html:16
 msgid "you can find a shorter list, with the most significative contributions."
 msgstr ""
+"você encontrará uma lista breve, com as contribuições mais significativas"
 
 #: templates/publications/by_year.html:25
 #: templates/publications/short_list.html:25
 #: templates/publications/embed/last.html:15
 msgid "view details"
-msgstr ""
+msgstr "ver detalhes"
 
 #: templates/publications/by_year.html:27
 #: templates/publications/short_list.html:28
 #: templates/publications/embed/last.html:18
 msgid "download"
-msgstr ""
+msgstr "baixar"
 
 #: templates/publications/by_year.html:35
 #: templates/publications/short_list.html:36
@@ -276,73 +274,64 @@ msgstr "editar"
 
 #: templates/publications/short_list.html:11
 #: templates/publications/short_list.html:15
-#, fuzzy
 msgid "Short list of Publications"
-msgstr "Título da publicação"
+msgstr "Lista de publicações resumida"
 
 #: templates/publications/short_list.html:16
 msgid ""
 "This is a short list of publications I have authored or co-authored, "
 "including a link to my graduate, master and doctorate thesis."
 msgstr ""
+"Esta é uma lista resumida das publicações que escrevi ou participei, "
+"incluindo atalhas para minhas teses de graduação, mestrado e doutorado."
 
 #: templates/publications/short_list.html:16
 msgid ""
 "you can find a complete list of my past publications together with access "
 "links to electronic versions."
 msgstr ""
+"você pode encontrar a lista de publicações completa, junto a atalhos para "
+"versões eletrônicas."
 
 #: templates/publications/simple_list.html:10
-#, fuzzy
 msgid "Publication List (simple)"
-msgstr "Publicacoes em "
+msgstr "Lista de Publicações (simples)"
 
 #: templates/publications/simple_list.html:14
 msgid "Publications (in reverse chronological order)"
-msgstr ""
+msgstr "Publicações (em ordem cronológica inversa)"
 
 #: templates/publications/simple_list.html:20
 #, python-format
 msgid ""
 "<span class=\"date\">%(date)s</span>, <span class=\"media\">%(media)s</span>"
 msgstr ""
+"<span class=\"date\">%(date)s</span>, <span class=\"media\">%(media)s</span>"
 
 #: templates/publications/embed/last.html:7
 msgid "date"
-msgstr ""
+msgstr "data"
 
 #: templates/publications/embed/last.html:8
-#, fuzzy
 msgid "title"
-msgstr "Arquivos"
+msgstr "título"
 
 #: templates/publications/embed/last.html:9
 msgid "downloads"
-msgstr ""
+msgstr "downloads"
 
 #: templates/publications/feeds/description.html:5
-#, fuzzy
 msgid "Publisher"
-msgstr "Data de publicação"
+msgstr "Editora"
 
 #: templates/publications/feeds/description.html:6
-#, fuzzy
 msgid "Authors"
-msgstr "Nome dos autores"
+msgstr "Autores"
 
 #: templates/publications/feeds/description.html:15
 msgid "Document(s) attached"
-msgstr ""
+msgstr "Documento(s) anexado(s)"
 
 #: templates/publications/feeds/files_title.html:1
 msgid "attached to"
-msgstr ""
-
-#~ msgid "Publications"
-#~ msgstr "Publicações"
-
-#~ msgid "Journal or proceedings"
-#~ msgstr "Journal ou anais"
-
-#~ msgid "File(s)"
-#~ msgstr "Arquivo(s)"
+msgstr "anexado a"
