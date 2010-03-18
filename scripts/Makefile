@@ -16,4 +16,4 @@ clean:
 	@rm -rf ${SCRIPT} ${INSTALLDIR}
 
 mrproper: clean
-	@rm -rf ${INSTALLDIR}
+	@rm -rf ez_setup.py ${INSTALLDIR}
