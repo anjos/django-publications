@@ -4,7 +4,7 @@
 {% block media %}
   {{ block.super }}
   <!-- Feeds go here if the caller has provided so -->
-  <link href="{{ MEDIA_URL }}publications/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{% static "publications/css/style.css" %}" rel="stylesheet" type="text/css" media="screen" />
 {% endblock %}
 
 {% block title %}{% trans "Publication List (simple)" %}{% endblock %}
