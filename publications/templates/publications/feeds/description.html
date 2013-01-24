@@ -16,7 +16,7 @@
 <ul>
   {% for f in obj.file_set.all %}
   <li>
-   <a href="{{ f.data.url }}">{{ f.name }}</a>, {{ f.data.size }} bytes</li>
+  <a href="{{ STATIC_URL }}{{ f.data.url }}">{{ f.name }}</a>, {{ f.data.size }} bytes</li>
    </li>
   {% endfor %}
 </ul>

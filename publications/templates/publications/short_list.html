@@ -26,7 +26,7 @@
             <td class="title"><a href="{{ p.id }}" title="{% trans "view details" %}">{{ p.title }}</a></td>
             <td class="attachments">
               {% for a in p.file_set.all %}
-              {% if a.public %}<a class="attachment" href="{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>{% endif %}
+              {% if a.public %}<a class="attachment" href="{{ STATIC_URL }}{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>{% endif %}
               {% endfor %}
             </td>
           </tr>

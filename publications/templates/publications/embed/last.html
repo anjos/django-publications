@@ -15,7 +15,7 @@
     <td class="title"><a href="{% url publications:detail obj.id %}" title="{% trans "view details" %}">{{ obj.title|truncatewords:"10" }}</a></td>
     <td class="attachments">
       {% for a in obj.file_set.all %}
-      {% if a.public %}<a class="attachment" href="{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>{% endif %}
+      {% if a.public %}<a class="attachment" href="{{ STATIC_URL }}{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>{% endif %}
       {% endfor %}
     </td>
   </tr>

@@ -25,7 +25,7 @@
             <td class="type">{{ p.get_publication_type_display }}</td>
             <td class="title"><a href="{% url publications:detail p.id %}" title="{% trans "view details" %}">{{ p.title }}</a></td>
             <td class="attachments">
-              {% for a in p.file_set.all %}<a class="attachment" href="{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>
+              {% for a in p.file_set.all %}<a class="attachment" href="{{ STATIC_URL }}{{ a.data.url }}" title="{% trans 'download' %} {{ a.data }}">{{ forloop.counter }}</a>
               {% endfor %}
             </td>
           </tr>
