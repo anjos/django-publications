@@ -7,7 +7,8 @@
 """
 
 from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.template import RequestContext, Context, loader
+from django.http import HttpResponse
 
 from publications.models import Publication 
 from publications.feeds import * 
@@ -72,3 +73,27 @@ def simple_list(request):
                             {'objects_by_year': data, 
                             },
                             context_instance=RequestContext(request))
+
+def bibtex_list(request):
+  """A simple bibtex listing from my publications"""
+
+  response = HttpResponse(mimetype='application/x-bibtex')
+  response['Content-Disposition'] = 'attachment; filename="andreanjos.bib"'
+
+  data = {}
+  for p in Publication.objects.order_by('-date'):
+    if data.has_key(p.date.year): data[p.date.year].append(p)
+    else: data[p.date.year] = [p]
+
+  years = data.keys()
+  years.sort(reverse=True)
+
+  data = [(y, data[y]) for y in years]
+
+  t = loader.get_template('publications/list.bib')
+  c = Context({
+    'objects_by_year': data,
+    'site': request.build_absolute_uri('/')[:-1]
+    })
+  response.write(t.render(c))
+  return response

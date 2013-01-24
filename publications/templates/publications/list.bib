@@ -1,0 +1,53 @@
+{% load i18n staticfiles %}{% if objects_by_year %}{% for year,object_list in objects_by_year %}%%%%%%%%%%%%
+%%  {{ year }}  %%
+%%%%%%%%%%%%
+{% for p in object_list %}
+{% if p.publication_type == 'J' %}@article {% templatetag openbrace %}
+  author  = "{{ p.author_list }}",
+  title   = "{{ p.title }}",
+  journal = "{{ p.media }}",
+  year    = "{% with p.date|date:"Y" as date %}{{ date }}{% endwith %}",
+  month   = "{% with p.date|date:"F" as date %}{{ date }}{% endwith %}",
+  {% if p.volume %}volume  = "{{ p.volume }}",{% else %}OPTvolume = "",{% endif %}
+  {% if p.number %}number  = "{{ p.number }}",{% else %}OPTnumber = "",{% endif %}
+  {% if p.pages  %}pages   = "{{ p.pages  }}",{% else %}OPTpages  = "",{% endif %}
+  {% if p.file_set.all.0 %}url     = "\url{% templatetag openbrace %}{{ site }}{% static p.file_set.all.0.data.url %}{% templatetag closebrace %}",{% else %}OPTurl = "",{% endif %}
+{% templatetag closebrace %}
+
+{% elif p.publication_type == 'C' %}@inproceedings {% templatetag openbrace %}
+  author    = "{{ p.author_list }}",
+  title     = "{{ p.title }}",
+  booktitle = "{{ p.media }}",
+  year      = "{% with p.date|date:"Y" as date %}{{ date }}{% endwith %}",
+  {% if p.volume %}volume  = "{{ p.volume }}",{% else %}OPTvolume = "",{% endif %}
+  {% if p.number %}number  = "{{ p.number }}",{% else %}OPTnumber = "",{% endif %}
+  {% if p.pages  %}pages   = "{{ p.pages  }}",{% else %}OPTpages  = "",{% endif %}
+  {% if p.file_set.all.0 %}url     = "\url{% templatetag openbrace %}{{ site }}{% static p.file_set.all.0.data.url %}{% templatetag closebrace %}",{% else %}OPTurl = "",{% endif %}
+{% templatetag closebrace %}
+
+{% elif p.publication_type == 'T' %}@phdthesis {% templatetag openbrace %}
+  author = "{{ p.author_list }}",
+  title  = "{{ p.title }}",
+  school = "{{ p.media }}",
+  year   = "{% with p.date|date:"Y" as date %}{{ date }}{% endwith %}",
+  {% if p.file_set.all.0 %}url     = "\url{% templatetag openbrace %}{{ site }}{% static p.file_set.all.0.data.url %}{% templatetag closebrace %}",{% else %}OPTurl = "",{% endif %}
+{% templatetag closebrace %}
+
+{% elif p.publication_type == 'R' %}@techreport {% templatetag openbrace %}
+  author      = "{{ p.author_list }}",
+  title       = "{{ p.title }}",
+  institution = "{{ p.media }}",
+  year        = "{% with p.date|date:"Y" as date %}{{ date }}{% endwith %}",
+  {% if p.volume %}volume  = "{{ p.volume }}",{% else %}OPTvolume = "",{% endif %}
+  {% if p.number %}number  = "{{ p.number }}",{% else %}OPTnumber = "",{% endif %}
+  {% if p.file_set.all.0 %}url     = "\url{% templatetag openbrace %}{{ site }}{% static p.file_set.all.0.data.url %}{% templatetag closebrace %}",{% else %}OPTurl = "",{% endif %}
+{% templatetag closebrace %}
+
+{% elif p.publication_type == 'O' %}@misc {% templatetag openbrace %}
+  author       = "{{ p.author_list }}",
+  title        = "{{ p.title }}",
+  howpublished = "{{ p.media }}",
+  year         = "{% with p.date|date:"Y" as date %}{{ date }}{% endwith %}",
+  {% if p.file_set.all.0 %}url     = "\url{% templatetag openbrace %}{{ site }}{% static p.file_set.all.0.data.url %}{% templatetag closebrace %}",{% else %}OPTurl = "",{% endif %}
+{% templatetag closebrace %}
+{% endif %}{% endfor %}{% endfor %}{% endif %}

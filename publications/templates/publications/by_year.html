@@ -14,7 +14,7 @@
 {% block content %}
 <div class="publication">
   <p class="title">{% blocktrans %}Complete list of Publications{% endblocktrans %}</p>
-  <p class="intro">{% trans "This is a complete list of publications I have authored or co-authored." %} <a href="{% url publications:short-list %}">{% trans "Here" %}</a> {% trans "you can find a shorter list, with the most significative contributions." %}
+  <p class="intro">{% trans "This is a complete list of publications I have authored or co-authored." %} {% trans "This list can also be reached in other formats" %}": <a href="{% url publications:bibtex-list %}">BibTeX</a> {% trans "or" %} <a href="{% url publications:simple-list %}">{% trans "Simple formatting" %}</a>. <a href="{% url publications:short-list %}">{% trans "Here" %}</a> {% trans "you can find a shorter list, with the most significative contributions." %} {% trans "You can find my h-index and i10-index information at" %} <a href="http://scholar.google.com/citations?user=pAfLhMoAAAAJ">Google Scholar</a>.</p>
   {% if objects_by_year %}
       {% for year,object_list in objects_by_year %}
         <p class="subtitle">{{ year }}</p>

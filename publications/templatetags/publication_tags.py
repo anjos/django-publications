@@ -16,4 +16,3 @@ def last_publications(n, include_header):
   """Puts out a bubble with the latest 'n' publications."""
   return {'objects': Publication.objects.order_by('-date')[:n],
           'include_header': include_header}
-
